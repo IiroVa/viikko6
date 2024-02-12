@@ -32,7 +32,7 @@ public class App
                         manufacturer = sc.nextLine();
                         System.out.println("Anna kulkuneuvon malli:");
                         model = sc.nextLine();
-                        System.out.println("Anna kulkuneuvon huippunopeus");
+                        System.out.println("Anna kulkuneuvon huippunopeus:");
                         maxSpeed = Integer.parseInt(sc.nextLine());
                         Vehicle v = new Car(manufacturer, model, maxSpeed);
                         vehicles.add(v);
@@ -41,7 +41,7 @@ public class App
                         manufacturer = sc.nextLine();
                         System.out.println("Anna kulkuneuvon malli:");
                         model = sc.nextLine();
-                        System.out.println("Anna kulkuneuvon huippunopeus");
+                        System.out.println("Anna kulkuneuvon huippunopeus:");
                         maxSpeed = Integer.parseInt(sc.nextLine());
                         Vehicle v = new Plane(manufacturer, model, maxSpeed);
                         vehicles.add(v);
@@ -50,7 +50,7 @@ public class App
                         manufacturer = sc.nextLine();
                         System.out.println("Anna kulkuneuvon malli:");
                         model = sc.nextLine();
-                        System.out.println("Anna kulkuneuvon huippunopeus");
+                        System.out.println("Anna kulkuneuvon huippunopeus:");
                         maxSpeed = Integer.parseInt(sc.nextLine());
                         Vehicle v = new Ship(manufacturer, model, maxSpeed);
                         vehicles.add(v);
@@ -79,25 +79,26 @@ public class App
                     break;
                     case 4:
                     
-                    for (Vehicle vehicle : vehicles){
-                    if(vehicle instanceof Ship){
-                        Ship s = (Ship) vehicle;
-                        s.sail();
-
-                    }
-                    }
-                    break;
-                    case 5:
                     
                     for (Vehicle vehicle : vehicles){
-                    if(vehicle instanceof Plane){
-                    Plane p = (Plane) vehicle;
-                    p.fly();
-                    }
-                    }
+                        if(vehicle instanceof Plane){
+                        Plane p = (Plane) vehicle;
+                        p.fly();
+                        }
+                        }
+                    break;
+                    case 5:
+                    for (Vehicle vehicle : vehicles){
+                        if(vehicle instanceof Ship){
+                            Ship s = (Ship) vehicle;
+                            s.sail();
+    
+                        }
+                        }
+                    
                     break;
                     case 0:
-                    System.out.println("Kiitos ohjelman käytöstä");
+                    System.out.println("Kiitos ohjelman käytöstä.");
                     exit=true;
                     break;
                     default:
